@@ -7,3 +7,6 @@ backend_port = {
 frontend_port = {
     dev = 4001
 }
+replicas = {
+  dev = 3
+}

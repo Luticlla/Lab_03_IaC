@@ -6,13 +6,12 @@ output "backend_image_id" {
     value = docker_image.backend.image_id
 }
 resource "docker_container" "backend" {
-    name = "api-${terraform.workspace}"
+    name = "api-${terraform.workspace}-${count.index + 1}"
     image = docker_image.backend.image_id
     ports {
         internal = 3000
-        external = var.backend_port[terraform.workspace]
+        external = var.backend_port[terraform.workspace]+count.index
         }
- # El backend es el puente: habla con el frontend y con la base de datos
         networks_advanced {
         name = docker_network.frontend_network.name
         }
