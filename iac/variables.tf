@@ -16,5 +16,10 @@ variable "database_port" {
 
 variable "backend_port" {
     type = map(number)
-    description = "Puerto de host por ambiente"
+    description = "Puerto donnde se expone el backend"
+}
+
+variable "frontend_port" {
+    type = map(number)
+    description = "Puerto donnde se expone el frontend"
 }
