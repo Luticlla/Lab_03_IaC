@@ -24,7 +24,11 @@ variable "frontend_port" {
     description = "Puerto donnde se expone el frontend"
 }
 
-variable "replicas" {
+variable "back_replicas" {
     type = map(number)
     description = "Cantidad de réplicas del backend, por ambiente."
+}
+variable "fron_replicas" {
+    type = map(number)
+    description = "Cantidad de réplicas del frontend, por ambiente."
 }
